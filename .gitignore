@@ -1,0 +1,5 @@
+# Quarto 编译输出
+_site/
+_quarto/
+.quarto/
+*.html

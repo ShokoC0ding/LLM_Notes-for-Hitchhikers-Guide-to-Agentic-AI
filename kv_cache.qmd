@@ -27,11 +27,16 @@ Q=HW_Q,\qquad K=HW_K,\qquad V=HW_V
 $$
 
 计算第 t 个位置的因果注意力输出：
-$$s_{t,i}=\frac{q_tk_i^\top}{\sqrt{d_k}}$$
+$$
+s_{t,i}=\frac{q_tk_i^\top}{\sqrt{d_k}}
+$$
 $$\alpha_{t,i}
 =
-\frac{e^{s_{t,i}}}{\sum_{j=1}^{t}e^{s_{t,j}}}$$
-$$o_{t,i}=\sum_{i=1}^{t}\alpha_{t,i}v_i$$
+\frac{e^{s_{t,i}}}{\sum_{j=1}^{t}e^{s_{t,j}}}
+$$
+$$
+o_{t,i}=\sum_{i=1}^{t}\alpha_{t,i}v_i
+$$
 
 其中留意第一个公式，遍历 i 后的 $s_{t,i}$，是位置 t 的 q （矩阵 Q 的一行）对 位置 1~t 的 k （矩阵 K 的多行）的注意力分数，完整的 $S$ 矩阵需要再遍历一遍 t 。
 
